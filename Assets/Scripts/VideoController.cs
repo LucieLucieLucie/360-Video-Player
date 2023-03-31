@@ -1,7 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using UnityEngine.InputSystem;
 using UnityEngine.Video;
 
 public class VideoController : MonoBehaviour
@@ -20,6 +19,14 @@ public class VideoController : MonoBehaviour
 
     public GameObject blackScreen;
 
+    public int condition = 0;
+
+    public List<List<int>> videoSequences = new List<List<int>> {
+    new List<int>{0,1,2,3},
+    new List<int>{4,5,6,7},
+    new List<int>{8,9,10,11}
+    };
+
 
 
     void Start()
@@ -37,24 +44,16 @@ public class VideoController : MonoBehaviour
         rotationsForVideo.Add("Secret Garden_20230316143022.mp4", 0);
         rotationsForVideo.Add("Water 2_20230316191452.mp4", 180);
 
-       //videoPlayer.audio
         UnityEngine.XR.InputDevices.GetDevices(inputDevices);
 
-        //ShuffleList(allVideos);
-        if (allVideos.Length > 0)
-        {
-            videoPlayer.url = Application.persistentDataPath + "/videos/" + allVideos[currentVideoIndex];
-            if(allVideos[currentVideoIndex].Equals("Hyde Park 2_20230316185752.mp4") || allVideos[currentVideoIndex].Equals("Queen Victoria 2_20230316191426.mp4"))
-            {
-                videoPlayer.SetDirectAudioVolume(0, 0.05f);
-            }
-            StartCoroutine(WaitForVideoToLoad());
-        }
+        ShuffleList(videoSequences[0]);
+        ShuffleList(videoSequences[1]);
+        ShuffleList(videoSequences[2]);
     }
 
     private void RotatePlayer()
     {
-        float yRotation = rotationsForVideo[allVideos[currentVideoIndex]] - userCamera.localRotation.eulerAngles.y;
+        float yRotation = rotationsForVideo[allVideos[(videoSequences[condition])[currentVideoIndex]]] - userCamera.localRotation.eulerAngles.y;
         XRRig.rotation = Quaternion.Euler(new Vector3(0,yRotation,0));
     }
 
@@ -66,11 +65,26 @@ public class VideoController : MonoBehaviour
         blackScreen.SetActive(false);
     }
 
+    public void StartNextVideo()
+    {
+        videoPlayer.url = Application.persistentDataPath + "/videos/" + allVideos[(videoSequences[condition])[currentVideoIndex]];
+        StartCoroutine(WaitForVideoToLoad());
+
+        if (allVideos[(videoSequences[condition])[currentVideoIndex]].Equals("Hyde Park 2_20230316185752.mp4") || allVideos[(videoSequences[condition])[currentVideoIndex]].Equals("Queen Victoria 2_20230316191426.mp4"))
+        {
+            videoPlayer.SetDirectAudioVolume(0, 0.05f);
+        }
+        else
+        {
+            videoPlayer.SetDirectAudioVolume(0, 1f);
+        }
+    }
+
     void Update()
     {
         if (Input.GetButtonDown("XRI_Right_PrimaryButton") || Input.GetKeyDown(KeyCode.A))
         {
-            if (currentVideoIndex < (allVideos.Length - 1))
+            if (currentVideoIndex < (videoSequences[condition].Count - 1))
             {
                 currentVideoIndex++;
             }
@@ -78,27 +92,16 @@ public class VideoController : MonoBehaviour
             {
                 currentVideoIndex = 0;
             }
-
-            videoPlayer.url = Application.persistentDataPath + "/videos/" + allVideos[currentVideoIndex];
-            StartCoroutine(WaitForVideoToLoad());
-
-            if (allVideos[currentVideoIndex].Equals("Hyde Park 2_20230316185752.mp4") || allVideos[currentVideoIndex].Equals("Queen Victoria 2_20230316191426.mp4"))
-            {
-                videoPlayer.SetDirectAudioVolume(0, 0.05f);
-            }
-            else
-            {
-                videoPlayer.SetDirectAudioVolume(0, 1f);
-            }
+            StartNextVideo();
         }
     }
 
-    public void ShuffleList(string[] alpha)
+    public void ShuffleList(List<int> alpha)
     {
-        for (int i = 0; i < alpha.Length; i++)
+        for (int i = 0; i < alpha.Count; i++)
         {
-            string temp = alpha[i];
-            int randomIndex = Random.Range(i, alpha.Length);
+            int temp = alpha[i];
+            int randomIndex = Random.Range(i, alpha.Count);
             alpha[i] = alpha[randomIndex];
             alpha[randomIndex] = temp;
         }
