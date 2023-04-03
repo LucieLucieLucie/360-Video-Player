@@ -9,6 +9,7 @@ public class ConditionSelector : MonoBehaviour
     public Image buttonB;
     public Image buttonC;
     int currentCondition = 0;
+    bool selectionBlocked = false;
 
     public VideoController videoController;
     void Start()
@@ -24,35 +25,64 @@ public class ConditionSelector : MonoBehaviour
             videoController.StartNextVideo();
             gameObject.SetActive(false);
         }
-        if(Input.GetButtonDown("XRI_Right_ThumbTouch") || Input.GetKeyDown(KeyCode.D))
+
+        if (!selectionBlocked)
         {
-            if(currentCondition < 2)
+            if (Input.GetAxis("XRI_Right_Primary2DAxis_Vertical") > 0.5f)
             {
-                currentCondition++;
+                if (currentCondition < 2)
+                {
+                    currentCondition++;
+                }
+                else
+                {
+                    currentCondition = 0;
+                }
+                selectionBlocked = true;
+                ChangeSelection();
             }
-            else
+            else if (Input.GetAxis("XRI_Right_Primary2DAxis_Vertical") < -0.5f)
             {
-                currentCondition = 0;
-            }
-            if(currentCondition == 0)
-            {
-                buttonA.color = Color.green;
-                buttonB.color = Color.white;
-                buttonC.color = Color.white;
-            }
-            else if (currentCondition == 1)
-            {
-                buttonA.color = Color.white;
-                buttonB.color = Color.green;
-                buttonC.color = Color.white;
-            }
-            else if (currentCondition == 2)
-            {
-                buttonA.color = Color.white;
-                buttonB.color = Color.white;
-                buttonC.color = Color.green;
+                if (currentCondition > 0)
+                {
+                    currentCondition--;
+                }
+                else
+                {
+                    currentCondition = 2;
+                }
+                selectionBlocked = true;
+                ChangeSelection();
             }
         }
+        else
+        {
+            if (Input.GetAxis("XRI_Right_Primary2DAxis_Vertical") > -0.05f && Input.GetAxis("XRI_Right_Primary2DAxis_Vertical") < 0.05f)
+            {
+                selectionBlocked = false;
+            }
+        }
+    }
 
+    public void ChangeSelection()
+    {
+        if (currentCondition == 0)
+        {
+            buttonA.color = Color.green;
+            buttonB.color = Color.white;
+            buttonC.color = Color.white;
+        }
+        else if (currentCondition == 1)
+        {
+            buttonA.color = Color.white;
+            buttonB.color = Color.green;
+            buttonC.color = Color.white;
+        }
+        else if (currentCondition == 2)
+        {
+            buttonA.color = Color.white;
+            buttonB.color = Color.white;
+            buttonC.color = Color.green;
+        }
     }
 }

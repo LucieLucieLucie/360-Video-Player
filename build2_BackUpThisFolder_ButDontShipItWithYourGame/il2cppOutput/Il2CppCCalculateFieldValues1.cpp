@@ -2628,14 +2628,14 @@ struct MoreInfo_tB58ABF2D5D75E92D35BBC37192CD0D5C02C3F0FA  : public RuntimeObjec
 	String_t* ___RemoteUrl_2;
 };
 
-// VideoController/<WaitForVideoToLoad>d__12
-struct U3CWaitForVideoToLoadU3Ed__12_t98063C319A2DC92762440A9B145AC12CC1A5E201  : public RuntimeObject
+// VideoController/<WaitForVideoToLoad>d__13
+struct U3CWaitForVideoToLoadU3Ed__13_t9DEF204B82DE48BD4D56506F15317B2989AB8057  : public RuntimeObject
 {
-	// System.Int32 VideoController/<WaitForVideoToLoad>d__12::<>1__state
+	// System.Int32 VideoController/<WaitForVideoToLoad>d__13::<>1__state
 	int32_t ___U3CU3E1__state_0;
-	// System.Object VideoController/<WaitForVideoToLoad>d__12::<>2__current
+	// System.Object VideoController/<WaitForVideoToLoad>d__13::<>2__current
 	RuntimeObject* ___U3CU3E2__current_1;
-	// VideoController VideoController/<WaitForVideoToLoad>d__12::<>4__this
+	// VideoController VideoController/<WaitForVideoToLoad>d__13::<>4__this
 	VideoController_t78C8E8AE6A5F68807542FBA9275DA9E50F95C7BC* ___U3CU3E4__this_2;
 };
 
@@ -11378,8 +11378,10 @@ struct ConditionSelector_t05A02BF1420A9F9C2A59B59721BE74F53C39E527  : public Mon
 	Image_tBC1D03F63BF71132E9A5E472B8742F172A011E7E* ___buttonC_7;
 	// System.Int32 ConditionSelector::currentCondition
 	int32_t ___currentCondition_8;
+	// System.Boolean ConditionSelector::selectionBlocked
+	bool ___selectionBlocked_9;
 	// VideoController ConditionSelector::videoController
-	VideoController_t78C8E8AE6A5F68807542FBA9275DA9E50F95C7BC* ___videoController_9;
+	VideoController_t78C8E8AE6A5F68807542FBA9275DA9E50F95C7BC* ___videoController_10;
 };
 
 // UnityEngine.EventSystems.EventTrigger
@@ -11550,8 +11552,10 @@ struct VideoController_t78C8E8AE6A5F68807542FBA9275DA9E50F95C7BC  : public MonoB
 	GameObject_t76FEDD663AB33C991A9C9A23129337651094216F* ___blackScreen_11;
 	// System.Int32 VideoController::condition
 	int32_t ___condition_12;
+	// System.Boolean VideoController::conditionHasBeenSelected
+	bool ___conditionHasBeenSelected_13;
 	// System.Collections.Generic.List`1<System.Collections.Generic.List`1<System.Int32>> VideoController::videoSequences
-	List_1_tB5A0E21D0A7C39DF93D616FD5B94C4737A083E35* ___videoSequences_13;
+	List_1_tB5A0E21D0A7C39DF93D616FD5B94C4737A083E35* ___videoSequences_14;
 };
 
 // UnityEngine.InputSystem.XR.XRController
@@ -14620,9 +14624,9 @@ struct U3CU3Ec_tA5C2E4144EE7B61B812E4C964CBD023947FFFF4D_StaticFields
 
 // System.Uri/MoreInfo
 
-// VideoController/<WaitForVideoToLoad>d__12
+// VideoController/<WaitForVideoToLoad>d__13
 
-// VideoController/<WaitForVideoToLoad>d__12
+// VideoController/<WaitForVideoToLoad>d__13
 
 // UnityEngine.AddComponentMenu
 
@@ -19594,19 +19598,19 @@ IL2CPP_EXTERN_C const int32_t g_FieldOffsetTable4342[3] =
 IL2CPP_EXTERN_C const int32_t g_FieldOffsetTable4343[1] = 
 {
 	static_cast<int32_t>(offsetof(XRDevice_tD076A68EFE413B3EEEEA362BE0364A488B58F194_StaticFields, ___deviceLoaded_0)),};
-IL2CPP_EXTERN_C const int32_t g_FieldOffsetTable4348[6] = 
+IL2CPP_EXTERN_C const int32_t g_FieldOffsetTable4345[7] = 
 {
-	static_cast<int32_t>(offsetof(ConditionSelector_t05A02BF1420A9F9C2A59B59721BE74F53C39E527, ___inputDevices_4)),static_cast<int32_t>(offsetof(ConditionSelector_t05A02BF1420A9F9C2A59B59721BE74F53C39E527, ___buttonA_5)),static_cast<int32_t>(offsetof(ConditionSelector_t05A02BF1420A9F9C2A59B59721BE74F53C39E527, ___buttonB_6)),static_cast<int32_t>(offsetof(ConditionSelector_t05A02BF1420A9F9C2A59B59721BE74F53C39E527, ___buttonC_7)),static_cast<int32_t>(offsetof(ConditionSelector_t05A02BF1420A9F9C2A59B59721BE74F53C39E527, ___currentCondition_8)),static_cast<int32_t>(offsetof(ConditionSelector_t05A02BF1420A9F9C2A59B59721BE74F53C39E527, ___videoController_9)),};
-IL2CPP_EXTERN_C const int32_t g_FieldOffsetTable4349[4] = 
+	static_cast<int32_t>(offsetof(ConditionSelector_t05A02BF1420A9F9C2A59B59721BE74F53C39E527, ___inputDevices_4)),static_cast<int32_t>(offsetof(ConditionSelector_t05A02BF1420A9F9C2A59B59721BE74F53C39E527, ___buttonA_5)),static_cast<int32_t>(offsetof(ConditionSelector_t05A02BF1420A9F9C2A59B59721BE74F53C39E527, ___buttonB_6)),static_cast<int32_t>(offsetof(ConditionSelector_t05A02BF1420A9F9C2A59B59721BE74F53C39E527, ___buttonC_7)),static_cast<int32_t>(offsetof(ConditionSelector_t05A02BF1420A9F9C2A59B59721BE74F53C39E527, ___currentCondition_8)),static_cast<int32_t>(offsetof(ConditionSelector_t05A02BF1420A9F9C2A59B59721BE74F53C39E527, ___selectionBlocked_9)),static_cast<int32_t>(offsetof(ConditionSelector_t05A02BF1420A9F9C2A59B59721BE74F53C39E527, ___videoController_10)),};
+IL2CPP_EXTERN_C const int32_t g_FieldOffsetTable4346[4] = 
 {
 	static_cast<int32_t>(offsetof(MySnapTurn_t59978D195C014329EBCAE72955B489BD0900AD66, ___inputDevices_4)),static_cast<int32_t>(offsetof(MySnapTurn_t59978D195C014329EBCAE72955B489BD0900AD66, ___XROrigin_5)),static_cast<int32_t>(offsetof(MySnapTurn_t59978D195C014329EBCAE72955B489BD0900AD66, ___snapAmount_6)),static_cast<int32_t>(offsetof(MySnapTurn_t59978D195C014329EBCAE72955B489BD0900AD66, ___rotationBlocked_7)),};
-IL2CPP_EXTERN_C const int32_t g_FieldOffsetTable4350[3] = 
+IL2CPP_EXTERN_C const int32_t g_FieldOffsetTable4347[3] = 
 {
-	static_cast<int32_t>(offsetof(U3CWaitForVideoToLoadU3Ed__12_t98063C319A2DC92762440A9B145AC12CC1A5E201, ___U3CU3E1__state_0)),static_cast<int32_t>(offsetof(U3CWaitForVideoToLoadU3Ed__12_t98063C319A2DC92762440A9B145AC12CC1A5E201, ___U3CU3E2__current_1)),static_cast<int32_t>(offsetof(U3CWaitForVideoToLoadU3Ed__12_t98063C319A2DC92762440A9B145AC12CC1A5E201, ___U3CU3E4__this_2)),};
-IL2CPP_EXTERN_C const int32_t g_FieldOffsetTable4351[10] = 
+	static_cast<int32_t>(offsetof(U3CWaitForVideoToLoadU3Ed__13_t9DEF204B82DE48BD4D56506F15317B2989AB8057, ___U3CU3E1__state_0)),static_cast<int32_t>(offsetof(U3CWaitForVideoToLoadU3Ed__13_t9DEF204B82DE48BD4D56506F15317B2989AB8057, ___U3CU3E2__current_1)),static_cast<int32_t>(offsetof(U3CWaitForVideoToLoadU3Ed__13_t9DEF204B82DE48BD4D56506F15317B2989AB8057, ___U3CU3E4__this_2)),};
+IL2CPP_EXTERN_C const int32_t g_FieldOffsetTable4348[11] = 
 {
-	static_cast<int32_t>(offsetof(VideoController_t78C8E8AE6A5F68807542FBA9275DA9E50F95C7BC, ___allVideos_4)),static_cast<int32_t>(offsetof(VideoController_t78C8E8AE6A5F68807542FBA9275DA9E50F95C7BC, ___videoPlayer_5)),static_cast<int32_t>(offsetof(VideoController_t78C8E8AE6A5F68807542FBA9275DA9E50F95C7BC, ___inputDevices_6)),static_cast<int32_t>(offsetof(VideoController_t78C8E8AE6A5F68807542FBA9275DA9E50F95C7BC, ___currentVideoIndex_7)),static_cast<int32_t>(offsetof(VideoController_t78C8E8AE6A5F68807542FBA9275DA9E50F95C7BC, ___rotationsForVideo_8)),static_cast<int32_t>(offsetof(VideoController_t78C8E8AE6A5F68807542FBA9275DA9E50F95C7BC, ___userCamera_9)),static_cast<int32_t>(offsetof(VideoController_t78C8E8AE6A5F68807542FBA9275DA9E50F95C7BC, ___XRRig_10)),static_cast<int32_t>(offsetof(VideoController_t78C8E8AE6A5F68807542FBA9275DA9E50F95C7BC, ___blackScreen_11)),static_cast<int32_t>(offsetof(VideoController_t78C8E8AE6A5F68807542FBA9275DA9E50F95C7BC, ___condition_12)),static_cast<int32_t>(offsetof(VideoController_t78C8E8AE6A5F68807542FBA9275DA9E50F95C7BC, ___videoSequences_13)),};
-IL2CPP_EXTERN_C const int32_t g_FieldOffsetTable4352[4] = 
+	static_cast<int32_t>(offsetof(VideoController_t78C8E8AE6A5F68807542FBA9275DA9E50F95C7BC, ___allVideos_4)),static_cast<int32_t>(offsetof(VideoController_t78C8E8AE6A5F68807542FBA9275DA9E50F95C7BC, ___videoPlayer_5)),static_cast<int32_t>(offsetof(VideoController_t78C8E8AE6A5F68807542FBA9275DA9E50F95C7BC, ___inputDevices_6)),static_cast<int32_t>(offsetof(VideoController_t78C8E8AE6A5F68807542FBA9275DA9E50F95C7BC, ___currentVideoIndex_7)),static_cast<int32_t>(offsetof(VideoController_t78C8E8AE6A5F68807542FBA9275DA9E50F95C7BC, ___rotationsForVideo_8)),static_cast<int32_t>(offsetof(VideoController_t78C8E8AE6A5F68807542FBA9275DA9E50F95C7BC, ___userCamera_9)),static_cast<int32_t>(offsetof(VideoController_t78C8E8AE6A5F68807542FBA9275DA9E50F95C7BC, ___XRRig_10)),static_cast<int32_t>(offsetof(VideoController_t78C8E8AE6A5F68807542FBA9275DA9E50F95C7BC, ___blackScreen_11)),static_cast<int32_t>(offsetof(VideoController_t78C8E8AE6A5F68807542FBA9275DA9E50F95C7BC, ___condition_12)),static_cast<int32_t>(offsetof(VideoController_t78C8E8AE6A5F68807542FBA9275DA9E50F95C7BC, ___conditionHasBeenSelected_13)),static_cast<int32_t>(offsetof(VideoController_t78C8E8AE6A5F68807542FBA9275DA9E50F95C7BC, ___videoSequences_14)),};
+IL2CPP_EXTERN_C const int32_t g_FieldOffsetTable4349[4] = 
 {
 	static_cast<int32_t>(offsetof(XRPlatformControllerSetup_tF3241056E2DD26648305E205151EB2ACF3333628, ___m_LeftController_4)),static_cast<int32_t>(offsetof(XRPlatformControllerSetup_tF3241056E2DD26648305E205151EB2ACF3333628, ___m_RightController_5)),static_cast<int32_t>(offsetof(XRPlatformControllerSetup_tF3241056E2DD26648305E205151EB2ACF3333628, ___m_LeftControllerOculusPackage_6)),static_cast<int32_t>(offsetof(XRPlatformControllerSetup_tF3241056E2DD26648305E205151EB2ACF3333628, ___m_RightControllerOculusPackage_7)),};
 IL2CPP_EXTERN_C const int32_t g_FieldOffsetTable4356[2] = 

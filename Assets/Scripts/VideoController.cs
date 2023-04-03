@@ -21,10 +21,12 @@ public class VideoController : MonoBehaviour
 
     public int condition = 0;
 
+    private bool conditionHasBeenSelected = false;
+
     public List<List<int>> videoSequences = new List<List<int>> {
-    new List<int>{0,1,2,3},
-    new List<int>{4,5,6,7},
-    new List<int>{8,9,10,11}
+    new List<int>{0,1,4,5},
+    new List<int>{2,8,6,7},
+    new List<int>{3,9,10,11}
     };
 
 
@@ -78,11 +80,12 @@ public class VideoController : MonoBehaviour
         {
             videoPlayer.SetDirectAudioVolume(0, 1f);
         }
+        conditionHasBeenSelected = true;
     }
 
     void Update()
     {
-        if (Input.GetButtonDown("XRI_Right_PrimaryButton") || Input.GetKeyDown(KeyCode.A))
+        if ((Input.GetButtonDown("XRI_Right_PrimaryButton") || Input.GetKeyDown(KeyCode.A)) && conditionHasBeenSelected)
         {
             if (currentVideoIndex < (videoSequences[condition].Count - 1))
             {
