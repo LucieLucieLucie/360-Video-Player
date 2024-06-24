@@ -618,7 +618,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!114 &478542524
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1053,6 +1053,14 @@ MonoBehaviour:
   - Queen Victoria 2_20230316191426.mp4
   - Secret Garden_20230316143022.mp4
   - Water 2_20230316191452.mp4
+  - BerlinLustgarten_01_Video_LeftOnTop.mp4
+  - BerlinNeptunBrunnen_01_Video_LeftOnTop.mp4
+  - BerlinSeifenblasen_01_Video_LeftOnTop.mp4
+  - Elbphilharmonie_02_Video_LowBitrate_LeftOnTop,mp4
+  - Elbtunnel_01_Video_LowBitrate_LeftOnTop.mp4
+  - Jungfernstieg_01_Video_LowBitrate_LeftOnTop.mp4
+  - "Landungsbr\xFCcken_01_Video_LowBitrate_LeftOnTop.mp4"
+  - Rathaus_05_Video_LowBitrate_LeftOnTop.mp4
   videoPlayer: {fileID: 887949461}
   userCamera: {fileID: 963194228}
   XRRig: {fileID: 1725982594}
@@ -1763,6 +1771,51 @@ MonoBehaviour:
   m_TrackingType: 0
   m_UpdateType: 0
   m_UseRelativeTransform: 0
+--- !u!1 &1729908390
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1729908392}
+  - component: {fileID: 1729908391}
+  m_Layer: 0
+  m_Name: StartEasy
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &1729908391
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1729908390}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 267cab9daeeee434ca36bd3aa099cd90, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  videoController: {fileID: 887949462}
+--- !u!4 &1729908392
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1729908390}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 7
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1784961284
 GameObject:
   m_ObjectHideFlags: 0

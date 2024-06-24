@@ -26,7 +26,8 @@ public class VideoController : MonoBehaviour
     public List<List<int>> videoSequences = new List<List<int>> {
     new List<int>{0,1,4,5},
     new List<int>{2,8,6,7},
-    new List<int>{3,9,10,11}
+    new List<int>{3,9,10,11},
+    new List<int>{0,1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19}
     };
 
 
@@ -45,12 +46,22 @@ public class VideoController : MonoBehaviour
         rotationsForVideo.Add("Queen Victoria 2_20230316191426.mp4", -280);
         rotationsForVideo.Add("Secret Garden_20230316143022.mp4", 0);
         rotationsForVideo.Add("Water 2_20230316191452.mp4", 180);
+        rotationsForVideo.Add("BerlinLustgarten_01_Video_LeftOnTop.mp4", 0);
+        rotationsForVideo.Add("BerlinNeptunBrunnen_01_Video_LeftOnTop.mp4", 0);
+        rotationsForVideo.Add("BerlinSeifenblasen_01_Video_LeftOnTop.mp4", 0);
+        rotationsForVideo.Add("Elbphilharmonie_02_Video_LowBitrate_LeftOnTop.mp4", 0);
+        rotationsForVideo.Add("Elbtunnel_01_Video_LowBitrate_LeftOnTop.mp4", 0);
+        rotationsForVideo.Add("Jungfernstieg_01_Video_LowBitrate_LeftOnTop.mp4", 0);
+        rotationsForVideo.Add("Landungsbrücken_01_Video_LowBitrate_LeftOnTop.mp4", 0);
+        rotationsForVideo.Add("Rathaus_05_Video_LowBitrate_LeftOnTop.mp4", 0);
+
 
         UnityEngine.XR.InputDevices.GetDevices(inputDevices);
 
         ShuffleList(videoSequences[0]);
         ShuffleList(videoSequences[1]);
         ShuffleList(videoSequences[2]);
+        ShuffleList(videoSequences[3]);
     }
 
     private void RotatePlayer()
