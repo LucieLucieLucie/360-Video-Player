@@ -1,0 +1,1 @@
+This project serves as a base 360° videoplayer for a user study on the structure of memories induced through immersive 360° videos of known and unknown places. Videos are currently hardcoded and not included in this Git project.
